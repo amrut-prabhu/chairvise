@@ -1,0 +1,26 @@
+= Backend of Viz Project
+:toc:
+:toc-title: Contents
+:sectnums:
+:imagesDir: images
+:stylesDir: stylesheets
+:xrefstyle: full
+:experimental:
+ifdef::env-github[]
+:format-caption:
+endif::[]
+:repoURL: https://github.com/CS3219-SEM1/chairvise-project-2018-team-11/tree/master/backend
+
+== Build Setup
+
+Download and install Python2 from https://www.python.org/downloads/release/python-2715/[here].
+
+Navigate to the `backend` directory and enter the following commands in the terminal to start the server for the ChairVisE project.
+
+``` bash
+# install dependencies
+python2 -m pip install -r requirements.txt
+
+# start server
+python2 manage.py runserver
+```

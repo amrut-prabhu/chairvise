@@ -1,2 +1,0 @@
-# chairvise
-Conference data visualisation
