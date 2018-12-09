@@ -12,6 +12,12 @@ ifdef::env-github[]
 endif::[]
 :repoURL: https://github.com/CS3219-SEM1/chairvise-project-2018-team-11/tree/master
 
+The project report can be viewed https://github.com/amrut-prabhu/chairvise/blob/master/Project_Report_A0147994J_A0162655B_A0154925Y_A0156045J.pdf[here].
+
+== Screenshots
+
+
+
 == Setting Up
 
 === Prerequisites 
@@ -55,100 +61,6 @@ python2 manage.py runserver
 
 
 For a detailed explanation on how things work, check out the http://vuejs-templates.github.io/webpack/[guide] and http://vuejs.github.io/vue-loader[docs for vue-loader].
-
-More details regarding this visualization project will come up once the main components are up.
-
-== System Features
-
-This section illustrates the functional requirements for the ChairVisE product. The system features and the major services provided by the product are specified in detail. 
-
-< You may prefer to organize this section by use case, mode of operation, user class, object class, functional hierarchy, or combinations of these, whatever makes the most logical sense for your product.>
-
-=== Insights derived from multiple files (Requirement 4 in CS3219 project description)
-
-==== Description and Priority
-
-// <Provide a short description of the feature and indicate whether it is of High, Medium, or Low priority. You could also include specific priority ratings, such as benefit, penalty, cost, and risk (each rated on a relative scale from a low of 1 to a high of 9).>
-
-This feature allows the user to upload multiple CSV files containing conference information at once. The app will then display insights and plots derived from data across these CSV files.
-
-This requirement is of `*High*` priority for the ChairVisE product.
-
-The insights shown are:
-
-[width="75%",cols="50% m,<50%",options="header",]
-|=======================================================================
-|Files uploaded |Visualisation
-|author.csv +
-submissions.csv
-|Using the affiliation data from submissions.csv and acceptance data from author.csv, a plot showing the top accepted affiliations is shown.
-
-|.csv +
-.csv
-|graph
-|=======================================================================
-
-==== Stimulus/Response Sequences
-
-// <Briefly list the sequences of user actions and system responses that stimulate the behavior defined for this feature. These will correspond to the dialog elements associated with use cases.>
-
-===== Activity diagram with swinlanes.
-
-The Activity diagram below illustrates the flow of actions involved in this feature.
-
-===== UC01 Insights from Multiple files
-*System* : ChairVise
-
-*Actor* : User
-
-*Precondition* : User is in the upload page.
-
-*MSS*
-
-// Can include Use case for Upload file- select button, or drag and drop (step 1)
-1. User uploads multiple CSV files.
-2. User maps the data schemes for the files (<<uc-mapping-schemes, UC02 Mapping data schemes>>).
-3. ChairVise opens a webpage showing visualisations derived from data across multiple files.
-+
-Use case ends.
-
-*Extensions*
-
-[none]
-* 1a. Uploaded file is not in CSV format.
-+
-[none]
-** 1a1. Visualisations are not generated from the file.
-+
-Use case resumes at step 2.
-
-==== Functional Requirements 
-
-// <List and briefly discuss the functional requirements associated with this feature. These are the capabilities that must be present in order for the user to execute the use case. Briefly include how the product should respond to anticipated error conditions or invalid inputs. Requirements should be concise, complete, unambiguous, verifiable, and necessary. Use “TBD” as a placeholder to indicate when necessary information is not yet available.>
-
-Here is a list of functional requirements associated with this feature. 
-
-- REQ-1: UX +
-When a user uploads mutiple files, pop-ups are shown asking the user to map the data schemas for each file (refer to <<mapping-data-schemes, Mapping Data Schemes>>).
-
-- REQ-2: UI +
-Tabs for different visualisations will be displayed. The default tab shown to the user is the *Derived Insights* tab. Each of the other tabs include visualisations derived from each of the individual CSV files, i.e., the visualisations that would have been shown if only that file was uploaded. +
-TBD: A checkbox for the user to choose whether the individual insights should be visualised.
-
-- REQ-3: Invalid inputs +
-Each of the uploaded CSV files must have a column representing the submission#. This is because the submission number is the column used for joining data from these files. +
-Uploaded files that are not CSV files are not included in visualisations. For error handling in the Mapping pop-up, see <<mapping-data-schemes, Invalid File Format while Mapping Schemes>>. +
-Data from invalid uploaded CSV files (missing join column, or not containing conference data) is not used in visualisations. An error message is displayed in the visualisation tab for that file.
-
-[[mapping-data-schemes]](Requirements 6 in CS3219 Project Description)
-=== Mapping Data Schemes
-Mapping Schema provides a standard template for users to map their own Submission/Author/Review files. 
-Users can select or create new column contents in this template. 
-The standard schema templates are: 
-[[uc-mapping-schemes]]
-- Author.csv: Submission number, first Name, last name, email, country, organization, webpage, person ID, correspnding
-- Submission.csv: Submission number, tracking, name, title, author, time Submitted, time updated, ignore, keywords, decision, mail sent, review sent, abstract
-- Review.csv: Review number, submission number, review_assignment number, reviewer name, field number, review comments, overall evaluation score, subreviewer info, data & time, recommendation
 
 == Design
 === Introduction
