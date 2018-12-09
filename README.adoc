@@ -16,15 +16,19 @@ The project report can be viewed https://github.com/amrut-prabhu/chairvise/blob/
 
 == Screenshots
 
-
+image::1.png[align="center"]
+image::2.png[align="center"]
+image::3.png[align="center"]
+image::4.png[align="center"]
+image::5.png[align="center"]
 
 == Setting Up
 
-=== Prerequisites 
+=== Prerequisites
 
 VueJS is the framework used to build our Single-Page Application. It uses v2.5.2 of vue.
 
-=== Build Setup 
+=== Build Setup
 
 The following commands are used for the build set up for JavaScript. For development purposes, go to the root folder and type in **npm run dev**.
 ``` bash
@@ -103,12 +107,12 @@ image::appbackend.png[align="center"]
 When the response is received, the returned data will be parsed and the infoType (author,submission,review) will be determined and the data will be pushed to Result.vue and displayed by the router view.
 
 The parameters passed to result.vue is : InputFileName, infoData and infoType. Some of the data still requires calculation and are computed and return to the data section. When data is ready, the components are added to the HTML code. +
-Result then pass the data to the subcomponents to render the charts and word cloud. When changes are made by the users, data that is "watched" will be trimmed accordingly and automatically updated. 
+Result then pass the data to the subcomponents to render the charts and word cloud. When changes are made by the users, data that is "watched" will be trimmed accordingly and automatically updated.
 
 To save the charts and text to a pdf file, html2canvas and jsPDF are the libraries used.
 html2canvas traverse through the DOM of the page and gathers information on all the elements. It then uses it to build a representation of the page, based on the properties it reads from the DOM. Refer to the documentation (https://html2canvas.hertzen.com/documentation).
 
-The existing implementation assumes that each page will only contain 2 charts, so a counter is used. When counter%2 == 1, it will use the same page, otherwise there is a need to use the doc.addPage() and also reset the starting top margin. 
+The existing implementation assumes that each page will only contain 2 charts, so a counter is used. When counter%2 == 1, it will use the same page, otherwise there is a need to use the doc.addPage() and also reset the starting top margin.
 
 === Current Implementation
 
@@ -136,7 +140,7 @@ Improvements to the user interface were mainly done using Bootstrap for vue (htt
 .User Login Page
 image::login.png[align="center"]
 === User Authentication
-To allow user to save their previous sessions, we need to differentiate between the different users. Thus we implemented a login/logout function and user authentication is done using the Firebase Authentication API. 
+To allow user to save their previous sessions, we need to differentiate between the different users. Thus we implemented a login/logout function and user authentication is done using the Firebase Authentication API.
 
 Knowing a user's identity allows us to securely save user data in Firebase and provide a personalized experience by saving sessions.
 
@@ -156,15 +160,15 @@ To prevent unauthorised users from accessing pages before they are logged in, we
 
 === Session Management
 
-Session Management is implemented using the **Database Session State** pattern. In using this pattern. we store the session data as committed data in Firebase database. 
+Session Management is implemented using the **Database Session State** pattern. In using this pattern. we store the session data as committed data in Firebase database.
 
-Session state is stored upon the user's request. There is a unique session for every file that is uploaded, even with files with the same name. Previous sessions could be accessed from the History Tab in the navigation bar. 
+Session state is stored upon the user's request. There is a unique session for every file that is uploaded, even with files with the same name. Previous sessions could be accessed from the History Tab in the navigation bar.
 
-When a call goes out from the client to the server, the server object first pulls the data required for the request from the database. The user then does the work it needs to do and saves back to the database the required data. 
+When a call goes out from the client to the server, the server object first pulls the data required for the request from the database. The user then does the work it needs to do and saves back to the database the required data.
 
 In order to pull information specific to a user from the database, the Firebase server differentiate the users according to the his unique User ID (UID), which is generated during login. The data saved are chartData and other text information and are parsed using JSON.stringify before storing in the server.
 
-As opposed to using other state storage patterns such as server/client session state, using **database session state** allows us to store different sessions for the same file name. 
+As opposed to using other state storage patterns such as server/client session state, using **database session state** allows us to store different sessions for the same file name.
 
 
 .User Session Management
@@ -231,7 +235,7 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 - _Continuous Integration_ +
 We use Travis CI to perform Continuous Integration on ChairVisE. See UsingTravis.adoc for more details.
 
-- _Build Automation_ + 
+- _Build Automation_ +
 We use Travis CI to perform Build automation.
 
 - _Managing Dependencies_ +
@@ -273,14 +277,14 @@ image::cms.png[align="center"]
 
 However, for each submission, there is multiple other data like author list with their affiliations, assigned reviewers for each submission, reviewers who many have conflict of interest with a submission.
 
-The following structure of author.csv, review.csv and submission.csv are shown below. 
+The following structure of author.csv, review.csv and submission.csv are shown below.
 
 ===== Columns for Author.csv
-.  submission# 
+.  submission#
 .  first name
 .  last name
 .  email
-.  country 
+.  country
 .  organisation
 .  webpage
 .  person#
@@ -291,14 +295,14 @@ The following structure of author.csv, review.csv and submission.csv are shown b
 .  track# (Paper or Poster)
 .  track name
 .  title of submission
-.  authors 
+.  authors
 .  time submitted
 .  last time updated
 .  form fields
 .  keywords
 .  decision
 .  notified
-.  reviews 
+.  reviews
 .  sent
 .  abstract
 
@@ -312,6 +316,6 @@ The following structure of author.csv, review.csv and submission.csv are shown b
 .  "overall eval - score"
 .  overall evaluation score
 .  subreviwer info
-.  date of submission 
+.  date of submission
 .  time of submission
 .  recommendation for best paper
