@@ -12,7 +12,7 @@ ifdef::env-github[]
 endif::[]
 :repoURL: https://github.com/CS3219-SEM1/chairvise-project-2018-team-11/tree/master
 
-The project report can be viewed https://github.com/amrut-prabhu/chairvise/blob/master/Chairvise Report.pdf[here].
+The project report can be viewed https://github.com/amrut-prabhu/chairvise/blob/master/Chairvise%20report.pdf[here].
 
 == Screenshots
 
